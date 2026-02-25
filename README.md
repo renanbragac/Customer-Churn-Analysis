@@ -27,8 +27,40 @@ Avaliei os modelos utilizando a métrica **AUC-ROC**:
 | **Random Forest** | **0.82** | Útil para identificar padrões não-lineares complexos. |
 
 
+# 🧪 Análise de Performance: Random Forest vs. Regressão Logística
 
-## 💡 Insights de Negócio
-* **Fidelização:** Incentivar a migração de planos mensais para contratos anuais.
-* **Onboarding:** Focar no sucesso do cliente nos primeiros 6 meses de contrato.
-* **Venda Cruzada:** Clientes sem Suporte Técnico cancelam com mais frequência; oferecer esse serviço pode aumentar a retenção.
+Nesta etapa, comparamos os dois modelos utilizando a **Matriz de Confusão** para entender onde cada modelo está falhando.
+
+---
+
+## 1. Matrizes de Confusão
+
+| Modelo | Verdadeiros Negativos (0) | Falsos Positivos (Erro tipo I) | Falsos Negativos (Erro tipo II) | Verdadeiros Positivos (1) |
+| :--- | :---: | :---: | :---: | :---: |
+| **Random Forest** | 743 | 79 | 154 | 151 |
+| **Logistic Regression** | 602 | 220 | 64 | 241 |
+
+---
+
+## 2. Insights e Trade-offs
+
+Ao analisar os dados acima, é possível perceber comportamentos distintos:
+
+### 🌲 Random Forest
+* **Alta Precisão:** O modelo é cauteloso e raramente dá alarmes falsos (**79 FPs**).
+* **Baixo Recall:** Ele deixa passar muitos casos reais (**154 FNs**).
+
+### 📈 Regressão Logística
+* **Alto Recall:** Captura a maioria dos positivos (**241**), errando apenas 64.
+* **Baixa Precisão:** Gera muitos alarmes falsos (**220**).
+
+---
+
+## 🛠️ Conclusão e Próximos Passos
+
+É possível notar que **os modelos ainda não estão perfeitos**. Os resultados atuais servem como uma base inicial e apresentam desequilíbrios entre precisão e recall.
+
+Para elevar a performance, as próximas etapas do projeto provavelmente devem incluir:
+1. **Fine-Tuning de Hiperparâmetros**
+2. **Feature Engineering**
+3. **Ajustes de Threshold**
