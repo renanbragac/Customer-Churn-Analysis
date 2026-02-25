@@ -18,7 +18,12 @@ O conjunto de dados consiste em **7.043 clientes** com 21 variáveis, incluindo:
 2. **Análise Exploratória (EDA):** Identificamos que clientes com **contratos mensais** e serviço de **Fibra Óptica** possuem taxas de churn significativamente mais altas.
 3. **Modelagem:** Comparação entre **Regressão Logística** e **Random Forest** utilizando hiperparâmetros padrão para estabelecer um baseline.
 
-## 📈 Resultados e Comparação
+# 🧪 Análise de Performance: Random Forest vs. Regressão Logística
+
+Nesta etapa, comparamos os dois modelos utilizando o Score AUC e a **Matriz de Confusão** para entender onde cada modelo está falhando.
+
+
+## 1. 📈 Resultados e Comparação
 Avaliei os modelos utilizando a métrica **AUC-ROC**:
 
 | Modelo | Score AUC | Principal Conclusão |
@@ -26,14 +31,9 @@ Avaliei os modelos utilizando a métrica **AUC-ROC**:
 | **Regressão Logística** | **0.84** | Melhor performance geral e alta interpretabilidade. |
 | **Random Forest** | **0.82** | Útil para identificar padrões não-lineares complexos. |
 
-
-# 🧪 Análise de Performance: Random Forest vs. Regressão Logística
-
-Nesta etapa, comparamos os dois modelos utilizando a **Matriz de Confusão** para entender onde cada modelo está falhando.
-
 ---
 
-## 1. Matrizes de Confusão
+## 2. Matrizes de Confusão
 
 | Modelo | Verdadeiros Negativos (0) | Falsos Positivos (Erro tipo I) | Falsos Negativos (Erro tipo II) | Verdadeiros Positivos (1) |
 | :--- | :---: | :---: | :---: | :---: |
@@ -42,7 +42,7 @@ Nesta etapa, comparamos os dois modelos utilizando a **Matriz de Confusão** par
 
 ---
 
-## 2. Insights e Trade-offs
+## 3. Insights
 
 Ao analisar os dados acima, é possível perceber comportamentos distintos:
 
