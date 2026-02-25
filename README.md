@@ -1,33 +1,34 @@
-# Customer Churn Analysis: Telco Industry
+# Análise de Churn de Clientes: Setor de Telecomunicações
 
-🇧🇷 [Clique aqui para a versão em Português](README_PTBR.md)
+🇺🇸 [Click here for the English version](README_EN.md)
 
-## 📌 Project Overview
-This project aims to predict customer attrition (churn) for a telecommunications company. By identifying at-risk customers, the business can proactively offer incentives to improve retention and protect monthly revenue.
+## 📌 Visão Geral do Projeto
+Este projeto tem como objetivo prever a rotatividade de clientes (churn) em uma empresa de telecomunicações. Ao identificar clientes com alto risco de cancelamento, a empresa pode agir preventivamente para melhorar a retenção e proteger o faturamento mensal.
 
 
 
-## 📊 The Data
-The dataset consists of **7,043 customers** with 21 features, including:
-* **Demographics:** Gender, senior citizenship, partners, and dependents.
-* **Services:** Phone, internet (Fiber optic/DSL), tech support, etc.
-* **Account Info:** Tenure, contract type, and payment method.
+## 📊 Os Dados
+O conjunto de dados consiste em **7.043 clientes** com 21 variáveis, incluindo:
+* **Demografia:** Gênero, idosos, parceiros e dependentes.
+* **Serviços:** Internet (Fibra óptica/DSL), suporte técnico, segurança online, etc.
+* **Informações da Conta:** Tempo de contrato (tenure), tipo de contrato e cobranças mensais.
 
-## 🛠️ Technical Workflow
-1. **Data Cleaning:** Handled missing values in `TotalCharges` and used **One-Hot Encoding** for categorical variables.
-2. **EDA:** Discovered that customers with **Month-to-Month contracts** and **Fiber Optic** internet have the highest churn rates.
-3. **Modeling:** Compared **Logistic Regression** vs. **Random Forest** using default hyperparameters to establish a baseline.
+## 🛠️ Fluxo de Trabalho Técnico
+1. **Tratamento de Dados:** Limpeza de valores ausentes e aplicação de **One-Hot Encoding** em variáveis categóricas.
+2. **Análise Exploratória (EDA):** Identificamos que clientes com **contratos mensais** e serviço de **Fibra Óptica** possuem taxas de churn significativamente mais altas.
+3. **Modelagem:** Comparação entre **Regressão Logística** e **Random Forest** utilizando hiperparâmetros padrão para estabelecer um baseline.
 
-## 📈 Performance Comparison
+## 📈 Resultados e Comparação
+Avaliei os modelos utilizando a métrica **AUC-ROC**:
 
-| Model | AUC Score | Key Takeaway |
+| Modelo | Score AUC | Principal Conclusão |
 | :--- | :---: | :--- |
-| **Logistic Regression** | **0.84** | Best overall performance and highly interpretable. |
-| **Random Forest** | **0.82** | Strong performance; useful for non-linear patterns. |
+| **Regressão Logística** | **0.84** | Melhor performance geral e alta interpretabilidade. |
+| **Random Forest** | **0.82** | Útil para identificar padrões não-lineares complexos. |
 
 
 
-## 💡 Business Insights
-* **High-Risk Contracts:** Month-to-month plans are churn drivers.
-* **Critical Period:** New customers (first 6 months) require more attention.
-* **Upselling Opportunity:** Customers without Tech Support churn more frequently.
+## 💡 Insights de Negócio
+* **Fidelização:** Incentivar a migração de planos mensais para contratos anuais.
+* **Onboarding:** Focar no sucesso do cliente nos primeiros 6 meses de contrato.
+* **Venda Cruzada:** Clientes sem Suporte Técnico cancelam com mais frequência; oferecer esse serviço pode aumentar a retenção.
